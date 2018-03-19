@@ -1,3 +1,18 @@
-body * {
-  border: solid 1px black;
+/* ----- BASE STYLES ----- */
+
+body {
+  box-sizing: border-box;
+}
+
+
+
+/* ----- HEADER STYLES ----- */
+
+.main-header {
+  background-color: #7479bd;
+  width: 100%;
+}
+
+.bell {
+  width: 20px;
 }
