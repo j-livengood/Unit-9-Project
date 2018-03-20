@@ -2,6 +2,17 @@
 
 body {
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+/*  color: #fafafa;*/
+}
+
+h1 {
+  font-weight: 900;
+  color: #fafafa;
+}
+
+h1 span {
+  font-weight: 100;
 }
 
 
@@ -11,8 +22,165 @@ body {
 .main-header {
   background-color: #7479bd;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fafafa;
+}
+
+.main-header h1 {
+  font-size: 24px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.user p {
+  padding-left: 10px;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #fafafa;
+  height: 35px;
 }
 
 .bell {
   width: 20px;
+  height: 20px;
+  padding: 0 10px 0 0;
+  margin: 0;
+}
+
+
+
+/* ----- NAV BAR STYLES ----- */
+
+.side-nav {
+  background-color: #4d4d71;
+  display: flex;
+  justify-content: space-around;
+}
+
+.side-nav a {
+  padding: 15px;
+}
+
+.side-nav svg {
+  width: 25px;
+  height: 25px;
+}
+
+
+
+/* ----- SEARCH STYLES ----- */
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background-color: #fbfbfb;
+}
+
+#main-search {
+  height: 25px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #d0d0d0;
+}
+
+
+
+/* ----- ALERT STYLES ----- */
+
+.alert {
+  background-color: #7479bd;
+  font-weight: 100;
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 5px;
+  color: #fafafa;
+  font-size: 14px;
+  display: none;
+}
+
+.alert p {
+  padding: 10px;
+}
+
+.alert span {
+  font-weight: 700;
+}
+
+
+
+/* ----- DASHBOARD STYLES ----- */
+
+.dashboard {
+  color: #909090;
+  margin: 10px auto 0;
+  width: 95%;
+}
+
+.dashboard h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.dashboard ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+/* ---- TRAFFIC STYLES ----- */
+
+.traffic-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.traffic-label h3 {
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.traffic-label ul {
+  display: flex;
+}
+
+.traffic-label a {
+  display: block;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.traffic-label li {
+  margin-left: 5px;
+}
+
+.active {
+  background-color: #83c891;
+  color: #fafafa;
+  border-radius: 15px;
+}
+
+.trafficChart-container {
+  margin-top: 15px;
 }
