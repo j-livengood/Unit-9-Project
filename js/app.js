@@ -1,19 +1,31 @@
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('trafficChartWeekly').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
 
     // The data for our dataset
     data: {
-        labels: ["March 19-25", "March 26-April 1", "April 2-8", "April 9-15", "April 16-22", "April 23-29", "April 30-May6"],
+        labels: ["", "19-25", "26-1", "2-8", "9-25", "26-22", "23-29", "30-6", "7-15", "16-24", "25-1", "2-8",],
         datasets: [{
-            label: "",
-            backgroundColor: 'rgb(255, 99, 132)',
+//            backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            data: [0, 500, 1000, 750, 1250, 1750, 1250, 1500, 1000, 1500, 2000, 1500],
         }]
     },
 
     // Configuration options go here
-    options: {}
+    options: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Custom Title'
+      },
+      elements: {
+        line: {
+          tension: 0
+        }
+      }
+    }
 });

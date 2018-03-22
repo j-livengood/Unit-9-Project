@@ -182,5 +182,7 @@ h1 span {
 }
 
 .trafficChart-container {
-  margin-top: 15px;
+  position: relative;
+  margin: 15px auto 0;
+  max-width: 900px;
 }
