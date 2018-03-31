@@ -150,6 +150,10 @@ h1 span {
 
 /* ---- TRAFFIC STYLES ----- */
 
+.traffic {
+  margin-top: 15px;
+}
+
 .traffic-label {
   display: flex;
   justify-content: space-between;
@@ -183,6 +187,35 @@ h1 span {
 
 .trafficChart-container {
   position: relative;
-  margin: 15px auto 0;
+  margin: 25px auto 0;
+  width: 90%;
   max-width: 900px;
+}
+
+
+
+/* ----- DAILY TRAFFIC STYLES -----*/
+
+.daily-traffic {
+  margin-top: 15px;
+}
+
+.dailyTrafficChart-container {
+  position: relative;
+  margin: 25px auto 0;
+  width: 90%;
+}
+
+
+
+/* ----- MOBILE USERS STYLES ----- */
+
+.mobile-users {
+  margin-top: 15px;
+}
+
+.mobileUsersChart-container {
+  position: relative;
+  width: 90%;
+  margin: 25px auto 0;
 }
