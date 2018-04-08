@@ -22,9 +22,11 @@ h1 span {
 .main-header {
   background-color: #7479bd;
   width: 100%;
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   color: #fafafa;
 }
 
@@ -52,6 +54,13 @@ h1 span {
   align-items: center;
   border-left: 1px solid #fafafa;
   height: 35px;
+  padding-left: 10px;
+}
+
+.user-img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 
 .bell {
@@ -73,6 +82,10 @@ h1 span {
 
 .side-nav a {
   padding: 15px;
+}
+
+.side-nav a:first-of-type {
+  border-bottom: 5px solid #83c891;
 }
 
 .side-nav svg {
@@ -198,6 +211,8 @@ h1 span {
 
 .daily-traffic {
   margin-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
 }
 
 .dailyTrafficChart-container {
@@ -212,10 +227,161 @@ h1 span {
 
 .mobile-users {
   margin-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
 }
 
 .mobileUsersChart-container {
   position: relative;
   width: 90%;
   margin: 25px auto 0;
+}
+
+
+
+/* ----- SOCIAL STATS STYLES ----- */
+
+.social-stats {
+  margin-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
+}
+
+.svg-container {
+  background-color: #7479bd;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+}
+
+.svg-container svg {
+  display: block;
+  margin: 0 auto;
+  padding-top: 35px;
+  width: 60px;
+}
+
+.twitter,
+.facebook,
+.google-plus {
+  width: 95%;
+  background-color: #fbfbfb;
+  border: 1px solid #e0e0e0;
+  margin: 15px auto 0;
+  padding: 10px;
+  display: flex;
+}
+
+.site-stats {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.site-stats h4 {
+  color: #7479bd;
+  font-size: 18px;
+}
+
+.site-stats p {
+  color: #7f7f7f;
+  font-size: 60px;
+  font-weight: 300;
+}
+
+
+
+/* ----- GENERAL MEMBER STYLES ----- */
+
+.member {
+  display: flex;
+  margin: 15px auto;
+  font-size: 14px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fbfbfb;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.member-info {
+  display: flex;
+}
+
+.member-contact {
+  padding-left: 10px;
+}
+
+
+
+/* ----- NEW MEMBERS STYLES ----- */
+
+.new-members {
+  margin: 15px auto;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+
+
+/* ----- RECENT ACTIVITY STYLES ----- */
+
+.recent-activity {
+  margin: 15px auto;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.member-activity p {
+  font-size: 32px;
+}
+
+
+
+/* ----- MESSAGE USER STYLES ----- */
+
+.message-user {
+  margin: 15px auto;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.message-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+#user-search {
+  outline: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+  padding: 5px;
+  font-style: italic;
+}
+
+#message {
+  outline: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+  padding: 5px;
+  font-style: italic;
+}
+
+#submit {
+  background-color: #7479bd;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+
+/* ----- SETTINGS STYLES ----- */
+
+.settings {
+  margin: 15px auto;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
 }
