@@ -134,19 +134,25 @@ function toggleActive() {
 }
 
 function changeChart(chosen) {
-  let activeChart = chosen;
   if (chosen.textContent === 'Hourly') {
-    console.log('Hourly');
+    trafficChart.config.data = trafficChartData.hourly;
+    trafficChart.options.scales.yAxes[0].ticks.max = trafficChartOptions.hourly.scales.yAxes[0].ticks.max;
+    trafficChart.options.scales.yAxes[0].ticks.stepSize = trafficChartOptions.hourly.scales.yAxes[0].ticks.stepSize;
+    trafficChart.update();
   } else if (chosen.textContent === 'Daily') {
-    console.log('Daily');
+    trafficChart.config.data = trafficChartData.daily;
+    trafficChart.options.scales.yAxes[0].ticks.max = trafficChartOptions.daily.scales.yAxes[0].ticks.max;
+    trafficChart.options.scales.yAxes[0].ticks.stepSize = trafficChartOptions.daily.scales.yAxes[0].ticks.stepSize;
+    trafficChart.update();
   } else if (chosen.textContent === 'Weekly') {
-    trafficChart.data = trafficChartData.weekly;
+    trafficChart.config.data = trafficChartData.weekly;
+    trafficChart.update();
   } else {
-    console.log('Monthly');
+    trafficChart.config.data = trafficChartData.monthly;
+    trafficChart.update();
   }
 }
 
-console.log(lineChart.type);
 
 
 // ----- EVENT LISTENERS ----- //
@@ -211,3 +217,5 @@ let mobileUsersChart = new Chart(doughnutChart, {
     }]
   }
 });
+
+console.log(trafficChart.options.scales.yAxes[0].ticks.max);
