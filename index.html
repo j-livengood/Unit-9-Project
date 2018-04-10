@@ -88,7 +88,7 @@
         <div class="traffic-label">
           <h3>TRAFFIC</h3>
 
-          <div>
+          <div class="chartOptions">
             <ul>
               <li><a>Hourly</a></li>
               <li><a>Daily</a></li>
@@ -296,13 +296,82 @@
           <input id="user-search" type="text" placeholder="Search for User">
           <label for="message"></label>
           <textarea id="message" placeholder="Message for User"></textarea>
-          <label for="submit"></label>
-          <input id="submit" type="submit">
+          <label for="send"></label>
+          <input id="send" type="submit" value="Send">
         </form>
       </div>
 
       <div class="settings">
         <h3>SETTINGS</h3>
+        
+        <div class="option">
+          <p>Send Email Notifications</p>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="option">
+          <p>Set Profile to Public</p>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        
+        <form>
+          <label for="timezone"></label>
+          <select name="timezone" id="timezone">
+            <option value="placeholder" selected disabled>Select Timezone</option>
+            <option>UTC -12:00</option>
+            <option>UTC -11:00</option>
+            <option>UTC -10:00</option>
+            <option>UTC -09:30</option>
+            <option>UTC -09:00</option>
+            <option>UTC -08:00</option>
+            <option>UTC -07:00</option>
+            <option>UTC -06:00</option>
+            <option>UTC -05:00</option>
+            <option>UTC -04:00</option>
+            <option>UTC -03:30</option>
+            <option>UTC -03:00</option>
+            <option>UTC -02:00</option>
+            <option>UTC -01:00</option>
+            <option>UTC ±00:00</option>
+            <option>UTC +01:00</option>
+            <option>UTC +02:00</option>
+            <option>UTC +03:00</option>
+            <option>UTC +03:30</option>
+            <option>UTC +04:00</option>
+            <option>UTC +04:30</option>
+            <option>UTC +05:00</option>
+            <option>UTC +05:30</option>
+            <option>UTC +05:45</option>
+            <option>UTC +06:00</option>
+            <option>UTC +06:30</option>
+            <option>UTC +07:00</option>
+            <option>UTC +08:00</option>
+            <option>UTC +08:30</option>
+            <option>UTC +08:45</option>
+            <option>UTC +09:00</option>
+            <option>UTC +09:30</option>
+            <option>UTC +10:00</option>
+            <option>UTC +10:30</option>
+            <option>UTC +11:00</option>
+            <option>UTC +12:00</option>
+            <option>UTC +12:45</option>
+            <option>UTC +13:00</option>
+            <option>UTC +14:00</option>
+          </select>
+          
+          <div class="buttons">
+            <label for="save"></label>
+            <input type="submit" id="save" value="Save">
+            <label for="cancel"></label>
+            <input type="submit" id="cancel" value="Cancel">
+          </div>
+        </form>
       </div>
     </div>
     

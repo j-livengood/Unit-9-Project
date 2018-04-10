@@ -15,6 +15,10 @@ h1 span {
   font-weight: 100;
 }
 
+label {
+  display: none;
+}
+
 
 
 /* ----- HEADER STYLES ----- */
@@ -351,6 +355,10 @@ h1 span {
   margin-top: 10px;
 }
 
+.message-form > * {
+  margin-top: 5px;
+}
+
 #user-search {
   outline: none;
   border: 1px solid #e0e0e0;
@@ -369,7 +377,7 @@ h1 span {
   font-style: italic;
 }
 
-#submit {
+#send {
   background-color: #7479bd;
   color: #fff;
   padding: 10px;
@@ -384,4 +392,108 @@ h1 span {
   margin: 15px auto;
   padding-top: 15px;
   border-top: 1px solid #e0e0e0;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #fff;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #7479bd;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #7479bd;
+}
+
+input:checked + .slider::before {
+  transform: translateX(40px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.settings form {
+  width: 100%;
+}
+
+select{
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px;
+  background: url('../web_app_dashboard_v2/icons/icons8-expand-arrow-50.png') no-repeat;
+  background-color: #fbfbfb;
+  background-size: 20px;
+  background-position: 97% 10px;
+  color: #a0a0a0;
+}
+
+.option {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.buttons {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons input {
+  width: 49%;
+}
+
+#save {
+  background-color: #7479bd;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#cancel {
+  background-color: #ccc;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
 }
