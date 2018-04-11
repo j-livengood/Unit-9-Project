@@ -126,19 +126,6 @@ const trafficChartOptions = {
 
 
 
-// ----- EVENT LISTENERS ----- //
-
-chartOptions.addEventListener('click', (e) => {
-  if (e.target.tagName === 'A') {
-    toggleActive();
-  }
-  
-  e.target.parentElement.className += 'active';
-  changeChart(e.target);
-});
-
-
-
 // ----- CHARTS ----- //
 
 Chart.defaults.scale.ticks.beginAtZero = true;
@@ -193,17 +180,25 @@ let mobileUsersChart = new Chart(doughnutChart, {
 
 
 
+// ----- EVENT LISTENERS ----- //
+
+chartOptions.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') {
+    toggleActive();
+  }
+  
+  e.target.parentElement.className += 'active';
+  changeChart(e.target);
+});
+
+
+
 // ----- FUNCTIONS ----- //
 
 function toggleActive() {
   for (let i = 0; i < optionsList.length; i++) {
     optionsList[i].classList.remove('active');
   }
-}
-
-function updateData() {
-  trafficChart.config.data = trafficChartData.hourly;
-  trafficChart.update();
 }
 
 function renderChart(data, option) {
