@@ -207,6 +207,8 @@ label {
   margin: 25px auto 0;
   width: 90%;
   max-width: 900px;
+  height: 90%;
+  max-height: 700px;
 }
 
 

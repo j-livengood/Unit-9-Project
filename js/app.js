@@ -24,9 +24,9 @@ const trafficChartData = {
     }],
   },
   daily: {
-    labels: ['', '16-22', '23-29', '30-5', '6-12', '13-19', '20-16', '27-3', '4-10', '11-17', '18-24', '25-31', '1-6'],
+    labels: ['', 'M', 'Tu', 'W', 'Th', 'F', 'Sa', 'Su', 'M', 'Tu', 'W', 'T', 'F'],
     datasets: [{
-      data: [0, 500, 1000, 750, 1250, 1750, 1250, 1500, 1000, 1500, 2000, 1500, 2000],
+      data: [125, 164, 134, 172, 334, 152, 222, 268, 147, 195, 224, 152, 334],
       borderColor: '#7479bd',
       backgroundColor: "rgba(116,121,189,0.3)",
       borderWidth: 2,
@@ -48,9 +48,9 @@ const trafficChartData = {
     }],
   },
   monthly: {
-    labels: ['', '16-22', '23-29', '30-5', '6-12', '13-19', '20-16', '27-3', '4-10', '11-17', '18-24', '25-31', '1-6'],
+    labels: ['', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
     datasets: [{
-      data: [0, 500, 1000, 750, 1250, 1750, 1250, 1500, 1000, 1500, 2000, 1500, 2000],
+      data: [0, 5000, 10000, 7500, 12500, 17500, 12500, 15000, 8000, 15000, 14000, 15000, 17000],
       borderColor: '#7479bd',
       backgroundColor: "rgba(116,121,189,0.3)",
       borderWidth: 2,
@@ -87,9 +87,9 @@ const trafficChartOptions = {
     scales: {
       yAxes: [{
         ticks: {
-          max: 2500,
+          max: 500,
           min: 0,
-          stepSize: 500,
+          stepSize: 100,
         }
       }]
     }
@@ -115,41 +115,12 @@ const trafficChartOptions = {
     scales: {
       yAxes: [{
         ticks: {
-          max: 2500,
+          max: 20000,
           min: 0,
-          stepSize: 500,
+          stepSize: 2000,
         }
       }]
     }
-  }
-}
-
-
-// ----- FUNCTIONS ----- //
-
-function toggleActive() {
-  for (let i = 0; i < optionsList.length; i++) {
-    optionsList[i].classList.remove('active');
-  }
-}
-
-function changeChart(chosen) {
-  if (chosen.textContent === 'Hourly') {
-    trafficChart.config.data = trafficChartData.hourly;
-    trafficChart.options.scales.yAxes[0].ticks.max = trafficChartOptions.hourly.scales.yAxes[0].ticks.max;
-    trafficChart.options.scales.yAxes[0].ticks.stepSize = trafficChartOptions.hourly.scales.yAxes[0].ticks.stepSize;
-    trafficChart.update();
-  } else if (chosen.textContent === 'Daily') {
-    trafficChart.config.data = trafficChartData.daily;
-    trafficChart.options.scales.yAxes[0].ticks.max = trafficChartOptions.daily.scales.yAxes[0].ticks.max;
-    trafficChart.options.scales.yAxes[0].ticks.stepSize = trafficChartOptions.daily.scales.yAxes[0].ticks.stepSize;
-    trafficChart.update();
-  } else if (chosen.textContent === 'Weekly') {
-    trafficChart.config.data = trafficChartData.weekly;
-    trafficChart.update();
-  } else {
-    trafficChart.config.data = trafficChartData.monthly;
-    trafficChart.update();
   }
 }
 
@@ -168,13 +139,15 @@ chartOptions.addEventListener('click', (e) => {
 
 
 
+// ----- CHARTS ----- //
+
 Chart.defaults.scale.ticks.beginAtZero = true;
 Chart.defaults.line.scales.spanGaps = true;
 
 let trafficChart = new Chart(lineChart, {
   type: 'line',
-  data: trafficChartData.hourly,
-  options: trafficChartOptions.hourly,
+  data: trafficChartData.weekly,
+  options: trafficChartOptions.weekly,
 });
 
 let dailyTrafficChart = new Chart(barChart, {
@@ -218,4 +191,39 @@ let mobileUsersChart = new Chart(doughnutChart, {
   }
 });
 
-console.log(trafficChart.options.scales.yAxes[0].ticks.max);
+
+
+// ----- FUNCTIONS ----- //
+
+function toggleActive() {
+  for (let i = 0; i < optionsList.length; i++) {
+    optionsList[i].classList.remove('active');
+  }
+}
+
+function updateData() {
+  trafficChart.config.data = trafficChartData.hourly;
+  trafficChart.update();
+}
+
+function renderChart(data, option) {
+  trafficChart.destroy();
+  trafficChart = new Chart(lineChart, {
+    type: 'line',
+    data: data,
+    options: option,
+  });
+}
+
+function changeChart(chosen) {
+  let chosenTextContent = chosen.textContent.toLowerCase();
+  if (chosenTextContent === 'hourly') {
+    renderChart(trafficChartData.hourly, trafficChartOptions.hourly);
+  } else if (chosenTextContent === 'daily') {
+    renderChart(trafficChartData.daily, trafficChartOptions.daily);
+  } else if (chosenTextContent === 'weekly') {
+    renderChart(trafficChartData.weekly, trafficChartOptions.weekly);
+  } else {
+    renderChart(trafficChartData.monthly, trafficChartOptions.monthly);
+  }
+}
