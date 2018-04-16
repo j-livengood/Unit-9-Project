@@ -201,24 +201,24 @@ function toggleActive() {
   }
 }
 
-function renderChart(data, option) {
-  trafficChart.destroy();
+function resetChart(data, options) {
+  trafficChart.reset();
   trafficChart = new Chart(lineChart, {
     type: 'line',
     data: data,
-    options: option,
+    options: options,
   });
 }
 
 function changeChart(chosen) {
   let chosenTextContent = chosen.textContent.toLowerCase();
   if (chosenTextContent === 'hourly') {
-    renderChart(trafficChartData.hourly, trafficChartOptions.hourly);
+    resetChart(trafficChartData.hourly, trafficChartOptions.hourly);
   } else if (chosenTextContent === 'daily') {
-    renderChart(trafficChartData.daily, trafficChartOptions.daily);
+    resetChart(trafficChartData.daily, trafficChartOptions.daily);
   } else if (chosenTextContent === 'weekly') {
-    renderChart(trafficChartData.weekly, trafficChartOptions.weekly);
+    resetChart(trafficChartData.weekly, trafficChartOptions.weekly);
   } else {
-    renderChart(trafficChartData.monthly, trafficChartOptions.monthly);
+    resetChart(trafficChartData.monthly, trafficChartOptions.monthly);
   }
 }

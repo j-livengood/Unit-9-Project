@@ -499,3 +499,42 @@ select{
   padding: 10px;
   border-radius: 5px;
 }
+
+
+
+/* ----- MEDIA QUERIES ----- */
+
+@media (min-width: 768px) {
+  .side-nav {
+    justify-content: flex-end;
+  }
+  
+  .side-nav a {
+    margin: 0 5px;
+  }
+  
+  .dashboard {
+    position: relative;
+    padding-top: 5px;
+  }
+  
+  .search {
+    position: absolute;
+    border-left: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    width: 80%;
+    right: 0px;
+    top: 123px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  #main-search {
+    margin: 0 15px;
+    align-self: center;
+  }
+  
+  .traffic {
+    margin-top: 20px;
+  }
+}
