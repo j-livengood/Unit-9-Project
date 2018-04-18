@@ -175,6 +175,19 @@ let mobileUsersChart = new Chart(doughnutChart, {
         '#7479bd'
       ]
     }]
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    layout: {
+      padding: {
+        left: 50,
+        right: 50,
+        top: 0,
+        bottom: 0
+      }
+    }
   }
 });
 
@@ -202,7 +215,7 @@ function toggleActive() {
 }
 
 function resetChart(data, options) {
-  trafficChart.reset();
+  trafficChart.destroy();
   trafficChart = new Chart(lineChart, {
     type: 'line',
     data: data,

@@ -243,6 +243,41 @@ label {
   margin: 25px auto 0;
 }
 
+.mobileUsersChartLegend {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.phones,
+.tablets,
+.desktop {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.phones div,
+.tablets div,
+.desktop div {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.phones div {
+  background-color: #76b1be;
+}
+
+.tablets div {
+  background-color: #83c891;
+}
+
+.desktop div {
+  background-color: #7479bd;
+}
+
 
 
 /* ----- SOCIAL STATS STYLES ----- */
@@ -530,11 +565,24 @@ select{
   }
   
   #main-search {
+    width: 70%;
     margin: 0 15px;
     align-self: center;
   }
   
   .traffic {
     margin-top: 20px;
+  }
+  
+  .chartLegendContainer {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .mobileUsersChartLegend {
+    flex-direction: column;
+    width: auto;
   }
 }
