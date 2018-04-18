@@ -585,4 +585,26 @@ select{
     flex-direction: column;
     width: auto;
   }
+  
+  .messageSettingsContainer {
+    display: flex;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .settings {
+    border-left: 1px solid #e0e0e0;
+    padding-left: 10px;
+  }
+  
+  .message-user,
+  .settings {
+    width: 48%;
+    padding-top: 0;
+    height: 100%;
+    border-top: none;
+  }
+  
+  #message {
+    height: 54px;
+  }
 }
